@@ -1,8 +1,9 @@
-/**
- * Copyright (c) 2020 Raspberry Pi (Trading) Ltd.
- *
- * SPDX-License-Identifier: BSD-3-Clause
- */
+/*****************************************************************************/
+//
+/* Attempt to perform a single read from a DfRobot A01NYUB serial Sensor     */
+// Greg Omond 13-Aug-2022
+//
+
 #include <time.h>
 #include <stdio.h>
 #include "pico/stdlib.h"
