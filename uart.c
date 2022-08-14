@@ -90,10 +90,10 @@ int main() {
     
     while (1){
     busy_wait_us(150);
-    read_serial_sensor();
-    // printf("Distance: ");
-    // printf("%d",read_serial_sensor());
-    // printf(" mm \n");
+    uint16_t usdat = read_serial_sensor();
+    printf("Distance: ");
+    printf("%d",usdat);
+    printf(" mm \n");
     }
        
 }
