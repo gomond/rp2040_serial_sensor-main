@@ -1,4 +1,4 @@
-# Install script for directory: /home/gomond/Downloads/rp2040_serial_sensor-main
+# Install script for directory: /home/gomond/pico/rp2040_serial_sensor-main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/gomond/Downloads/rp2040_serial_sensor-main/build/pico-sdk/cmake_install.cmake")
+  include("/home/gomond/pico/rp2040_serial_sensor-main/build/pico-sdk/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gomond/Downloads/rp2040_serial_sensor-main/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gomond/pico/rp2040_serial_sensor-main/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
