@@ -9,7 +9,40 @@
 #include "pico/stdlib.h"
 #include "hardware/uart.h"
 #include "hardware/irq.h"
+#include "pico/sleep.h"
+#include "hardware/rtc.h"
 
+static bool awake;
+
+static void sleep_callback(void){
+    awake = true;
+}
+
+static void rtc_sleep(void) {
+
+  datetime_t t = {
+            .year  = 2020,
+            .month = 8,
+            .day   = 19,
+            .dotw  = 5,
+            .hour  = 10,
+            .min   = 10,
+            .sec   = 00
+  };
+  datetime_t t_alarm = {
+            .year  = 2020,
+            .month = 8,
+            .day   = 19,
+            .dotw  = 5,
+            .hour  = 10,
+            .min   = 20,    // 10 minutes after
+            .sec   = 00
+  };
+  rtc_init();
+  rtc_set_datetime(&t);
+
+  sleep_goto_sleep_until(&t_alarm, &sleep_callback);
+}
 unsigned char data[4];
 /// \tag::uart_advanced[]
 
@@ -55,9 +88,9 @@ int16_t read_serial_sensor() {
     //busy_wait_us(1500);
     }
     if (newData) {
-    printf("Distance: ");
-    printf("%d",distance);
-    printf(" mm \n");
+    // printf("Distance: ");
+    // printf("%d",distance);
+    // printf(" mm \n");
     newData = false;
     return(distance);
     }
@@ -65,6 +98,11 @@ int16_t read_serial_sensor() {
 
 int main() {
     stdio_init_all();
+
+    /* Alternative deeper sleep mode */
+    sleep_run_from_xosc();
+    
+    awake = false;
     // Set up our UART with a basic baud rate.
     uart_init(UART_ID, 9600);
 
@@ -85,12 +123,14 @@ int main() {
     uart_set_format(UART_ID, DATA_BITS, STOP_BITS, PARITY);
 
     // Turn off FIFO's - we want to do this character by character
-    uart_set_fifo_enabled(UART_ID, false);
+    uart_set_fifo_enabled(UART_ID, true);
 
-    
+    rtc_sleep(); // Put the Pico to sleep
+
     while (1){
-    busy_wait_us(150);
-    uint16_t usdat = read_serial_sensor();
+    uint16_t usdat = 0;
+    busy_wait_us(6000000);
+    usdat = read_serial_sensor();
     printf("Distance: ");
     printf("%d",usdat);
     printf(" mm \n");

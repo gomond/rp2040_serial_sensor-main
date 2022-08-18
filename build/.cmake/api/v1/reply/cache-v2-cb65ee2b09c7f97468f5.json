@@ -279,10 +279,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/arm-none-eabi-g++"
 		},
 		{
@@ -407,10 +407,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/usr/bin/arm-none-eabi-gcc"
 		},
 		{
@@ -867,7 +867,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "74"
+			"value" : "94"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -1451,7 +1451,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : " /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs"
+			"value" : " /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs /home/gomond/pico/pico-sdk/src/rp2_common/cmsis /home/gomond/pico/pico-sdk/src/rp2040/hardware_regs"
 		},
 		{
 			"name" : "PICO_DOXYGEN_PATHS",
@@ -1464,6 +1464,42 @@
 			],
 			"type" : "INTERNAL",
 			"value" : " /home/gomond/pico/pico-sdk/src/common /home/gomond/pico/pico-sdk/lib/cyw43-driver/src /home/gomond/pico/pico-sdk/src/rp2_common /home/gomond/pico/pico-sdk/src/rp2040"
+		},
+		{
+			"name" : "PICO_EXTRAS_FETCH_FROM_GIT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Set to ON to fetch copy of PICO EXTRAS from git if not otherwise locatable"
+				}
+			],
+			"type" : "BOOL",
+			"value" : ""
+		},
+		{
+			"name" : "PICO_EXTRAS_FETCH_FROM_GIT_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "location to download EXTRAS"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : ""
+		},
+		{
+			"name" : "PICO_EXTRAS_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to the PICO EXTRAS"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/home/gomond/pico/pico-extras"
 		},
 		{
 			"name" : "PICO_NO_FLASH",
@@ -1668,6 +1704,42 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "b91b4035ecb3bb3f5760d35922531bcd"
+		},
+		{
+			"name" : "pico_extras_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/gomond/pico/rp2040_serial_sensor-main/build/pico_extras"
+		},
+		{
+			"name" : "pico_extras_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "pico_extras_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/gomond/pico/pico-extras"
 		},
 		{
 			"name" : "pico_sdk_BINARY_DIR",

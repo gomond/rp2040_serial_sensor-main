@@ -11,6 +11,8 @@ set(PICO_SDK_PATH "~/pico/pico-sdk")
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
+# We also need PICO EXTRAS
+include($ENV{PICO_EXTRAS_PATH}/external/pico_extras_import.cmake)
 
 project(uart C CXX ASM)
 
@@ -32,7 +34,7 @@ pico_enable_stdio_uart(uart 0)
 pico_enable_stdio_usb(uart 1)
 
 # Add the standard library to the build
-target_link_libraries(uart pico_stdlib)
+target_link_libraries(uart pico_stdlib hardware_rtc hardware_sleep hardware_rosc)
 
 pico_add_extra_outputs(uart)
 

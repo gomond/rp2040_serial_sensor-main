@@ -41,6 +41,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/gomond/pico/rp2040_serial_sensor-main/build/pico-sdk/tools/cmake_install.cmake")
   include("/home/gomond/pico/rp2040_serial_sensor-main/build/pico-sdk/src/cmake_install.cmake")
+  include("/home/gomond/pico/rp2040_serial_sensor-main/build/pico_extras/src/cmake_install.cmake")
   include("/home/gomond/pico/rp2040_serial_sensor-main/build/pico-sdk/docs/cmake_install.cmake")
 
 endif()
